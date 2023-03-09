@@ -2,7 +2,6 @@ import os
 import random
 import json
 
-
 def generate_username(num_results=1):
     directory_path = os.path.dirname(__file__)
     adjectives, nouns = [], []
@@ -17,7 +16,7 @@ def generate_username(num_results=1):
     for _ in range(num_results):
         adjective = random.choice(adjectives)
         noun = random.choice(nouns).capitalize()
-        num = str(random.randrange(10))
+        num = str(random.randrange(100))
         usernames.append(adjective + noun + num)
     
     return usernames
