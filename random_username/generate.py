@@ -1,16 +1,17 @@
 import os
 import random
+import json
 
 
 def generate_username(num_results=1):
     directory_path = os.path.dirname(__file__)
     adjectives, nouns = [], []
-    with open(os.path.join(directory_path, 'data', 'adjectives.txt'), 'r') as file_adjective:
-        with open(os.path.join(directory_path, 'data', 'nouns.txt'), 'r') as file_noun:
-            for line in file_adjective:
-                adjectives.append(line.strip())
-            for line in file_noun:
-                nouns.append(line.strip())
+
+    word_file = open(os.path.join(directory_path, 'data', 'words.json'), 'r')
+    words = json.load(word_file);
+
+    adjectives = words['adjectives']
+    nouns = words['nouns']
 
     usernames = []
     for _ in range(num_results):
