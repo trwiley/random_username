@@ -6,7 +6,7 @@ def generate_username(num_results=1):
     directory_path = os.path.dirname(__file__)
     adjectives, nouns = [], []
 
-    word_file = open(os.path.join(directory_path, 'data', 'words.json'), 'r')
+    word_file = open('words.json', 'r')
     words = json.load(word_file);
 
     adjectives = words['adjectives']
